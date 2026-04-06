@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>South Africa | Forbes Global Properties — Luxury Real Estate</title>
+<meta name="description" content="South Africa | Forbes Global Properties, luxury real estate in Cape Town, Winelands, Safari Estates and the Garden Route. Buy and sell extraordinary homes.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Work+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #0a0a0a;
+  --true-black: #000;
+  --white: #fff;
+  --cream: #FAF6F0;
+  --brown: #B8965A;
+  --brown-light: #F5EDE0;
+  --grey: #888;
+  --grey-med: #666;
+  --deep-grey: #222;
+  --light-grey: #ddd;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Work Sans', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--sans); background: var(--white); color: var(--black); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+
+/* ── UTILITIES ── */
+.container { max-width: 1320px; margin: 0 auto; padding: 0 24px; }
+img { max-width: 100%; height: auto; display: block; }
+a { text-decoration: none; color: inherit; }
+
+/* ── TYPOGRAPHY ── */
+.font-serif { font-family: var(--serif); }
+.font-sans { font-family: var(--sans); }
+.text-brown { color: var(--brown); }
+.text-white { color: var(--white); }
+.text-grey { color: var(--grey); }
+
+/* ── REVEAL ANIMATION ── */
+.rv { opacity: 0; transform: translateY(28px); transition: opacity 1s cubic-bezier(.25,.46,.45,.94), transform 1s cubic-bezier(.25,.46,.45,.94); }
+.rv.vis { opacity: 1; transform: translateY(0); }
+.rv.d1 { transition-delay: .1s; } .rv.d2 { transition-delay: .2s; }
+.rv.d3 { transition-delay: .3s; } .rv.d4 { transition-delay: .4s; }
+.rv.d5 { transition-delay: .5s; }
+
+/* ── HEADER ── */
+.site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 28px 0; transition: background .4s, padding .4s, backdrop-filter .4s; }
+.site-header.scrolled { background: rgba(10,10,10,.92); backdrop-filter: blur(12px); padding: 16px 0; }
+.header-inner { display: grid; grid-template-columns: 1fr 2fr 1fr; align-items: center; }
+.header-logo { text-align: center; }
+.header-logo a { font-family: var(--serif); font-weight: 300; font-size: 13px; letter-spacing: .28em; text-transform: uppercase; color: var(--white); line-height: 1.3; }
+.header-logo .pipe { display: block; font-size: 11px; letter-spacing: .35em; color: var(--brown); opacity: .7; }
+.header-nav { display: flex; gap: 32px; justify-content: flex-start; }
+.header-nav a { font-family: var(--sans); font-size: 13px; font-weight: 300; color: var(--white); letter-spacing: .03em; opacity: .7; transition: opacity .3s; }
+.header-nav a:hover { opacity: 1; }
+.header-right { display: flex; gap: 20px; justify-content: flex-end; align-items: center; }
+.header-right a { font-family: var(--sans); font-size: 13px; font-weight: 300; color: var(--white); opacity: .7; transition: opacity .3s; }
+.header-right a:hover { opacity: 1; }
+.header-right .lock-icon { width: 18px; height: 18px; opacity: .6; }
+
+/* ── HERO ── */
+.hero { position: relative; height: 100vh; min-height: 700px; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; background: var(--true-black); }
+.hero-media { position: absolute; inset: 0; }
+.hero-media img { width: 100%; height: 100%; object-fit: cover; opacity: .45; filter: saturate(.7); }
+.hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,.7) 0%, rgba(0,0,0,.15) 50%, rgba(0,0,0,.1) 100%); }
+.hero-content { position: relative; z-index: 2; text-align: center; padding: 0 24px 100px; }
+.hero-breadcrumb { font-family: var(--sans); font-size: 11px; letter-spacing: .15em; color: rgba(255,255,255,.45); margin-bottom: 40px; display: flex; align-items: center; justify-content: center; gap: 12px; }
+.hero-breadcrumb .dot { width: 4px; height: 4px; border-radius: 50%; background: rgba(255,255,255,.35); }
+.hero-title { font-family: var(--serif); font-weight: 300; font-size: clamp(38px, 6vw, 80px); color: var(--white); line-height: 1.05; margin-bottom: 20px; }
+.hero-title .accent { color: var(--brown); }
+.hero-sub { font-family: var(--sans); font-weight: 200; font-size: clamp(15px, 1.4vw, 18px); color: rgba(255,255,255,.6); max-width: 560px; margin: 0 auto 48px; line-height: 1.7; }
+.hero-links { display: flex; gap: 0; justify-content: center; border-top: 1px solid var(--brown); border-bottom: 1px solid var(--brown); padding: 20px 0; max-width: 420px; margin: 0 auto 80px; }
+.hero-links a { font-family: var(--sans); font-size: 12px; letter-spacing: .15em; text-transform: uppercase; color: var(--white); padding: 0 28px; transition: color .3s; }
+.hero-links a:hover { color: var(--brown); }
+.hero-scroll { width: 1px; height: 48px; background: rgba(255,255,255,.2); margin: 0 auto 12px; position: relative; overflow: hidden; }
+.hero-scroll::after { content: ''; position: absolute; top: -100%; left: 0; width: 100%; height: 100%; background: var(--brown); animation: scrollLine 2s ease-in-out infinite; }
+@keyframes scrollLine { 0% { top: -100%; } 50% { top: 0; } 100% { top: 100%; } }
+.hero-enter { font-family: var(--sans); font-size: 14px; color: rgba(255,255,255,.5); font-weight: 300; }
+
+/* ── INTRO SECTION (dark) ── */
+.intro { background: var(--true-black); padding: 120px 0; }
+.intro-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 80px; align-items: center; }
+.intro h2 { font-family: var(--serif); font-weight: 300; font-size: clamp(28px, 3.5vw, 48px); color: var(--white); line-height: 1.15; margin-bottom: 32px; }
+.intro h2 .accent { color: var(--brown); }
+.intro-text { font-family: var(--sans); font-weight: 300; font-size: 15px; color: rgba(255,255,255,.6); line-height: 1.8; padding-left: 20px; border-left: 1px solid var(--brown); margin-bottom: 40px; }
+.btn-outline { font-family: var(--sans); font-size: 14px; color: var(--brown); border: 1px solid var(--brown); padding: 12px 24px; display: inline-block; transition: background .3s, color .3s; }
+.btn-outline:hover { background: var(--brown); color: var(--white); }
+
+/* ── PROPERTIES GRID ── */
+.properties { padding: 100px 0 60px; }
+.properties h2 { font-family: var(--serif); font-weight: 300; font-size: clamp(28px, 3.5vw, 48px); margin-bottom: 56px; }
+.prop-big { position: relative; overflow: hidden; margin-bottom: 48px; cursor: pointer; }
+.prop-big img { width: 100%; height: 580px; object-fit: cover; transition: transform .8s ease; }
+.prop-big:hover img { transform: scale(1.03); }
+.prop-big-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,.6) 0%, transparent 50%); }
+.prop-big-content { position: absolute; bottom: 48px; left: 48px; z-index: 2; }
+.prop-big-content h3 { font-family: var(--serif); font-size: clamp(22px, 2.5vw, 32px); color: var(--white); margin-bottom: 8px; }
+.prop-big-content p { font-family: var(--sans); font-size: 14px; font-weight: 300; color: rgba(255,255,255,.65); }
+.prop-label { font-family: var(--sans); font-size: 14px; color: var(--black); text-align: right; margin-top: 16px; }
+.prop-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 48px; }
+.prop-card { position: relative; overflow: hidden; cursor: pointer; }
+.prop-card img { width: 100%; height: 480px; object-fit: cover; transition: transform .8s ease; }
+.prop-card:hover img { transform: scale(1.03); }
+.prop-card-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,.55) 0%, transparent 50%); }
+.prop-card-content { position: absolute; bottom: 40px; left: 40px; z-index: 2; }
+.prop-card-content h3 { font-family: var(--serif); font-size: 24px; color: var(--white); margin-bottom: 6px; }
+.prop-card-content p { font-family: var(--sans); font-size: 13px; font-weight: 300; color: rgba(255,255,255,.6); }
+
+/* ── DEVELOPMENTS SLIDER ── */
+.developments { background: var(--brown-light); padding: 80px 0; }
+.developments h2 { font-family: var(--serif); font-weight: 300; font-size: clamp(28px, 3.5vw, 48px); margin-bottom: 8px; }
+.developments .subtitle { font-family: var(--sans); font-size: 15px; font-weight: 300; max-width: 520px; margin-bottom: 56px; line-height: 1.7; }
+.dev-scroll { display: flex; gap: 24px; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding-bottom: 16px; }
+.dev-scroll::-webkit-scrollbar { display: none; }
+.dev-card { min-width: 380px; max-width: 420px; scroll-snap-align: start; position: relative; overflow: hidden; flex-shrink: 0; cursor: pointer; }
+.dev-card img { width: 100%; height: 500px; object-fit: cover; transition: transform .7s ease; }
+.dev-card:hover img { transform: scale(1.03); }
+.dev-card-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,.65) 0%, transparent 40%); }
+.dev-card-content { position: absolute; bottom: 32px; left: 24px; right: 24px; z-index: 2; }
+.dev-card-content h3 { font-family: var(--serif); font-size: 26px; color: var(--white); margin-bottom: 6px; }
+.dev-card-content .loc { font-family: var(--sans); font-size: 13px; color: rgba(255,255,255,.5); margin-bottom: 8px; }
+.dev-card-content p { font-family: var(--sans); font-size: 13px; font-weight: 300; color: rgba(255,255,255,.6); line-height: 1.6; opacity: 0; max-height: 0; overflow: hidden; transition: opacity .4s, max-height .4s; }
+.dev-card:hover .dev-card-content p { opacity: 1; max-height: 120px; }
+
+/* ── FEATURED LISTINGS ── */
+.featured { padding: 100px 0; }
+.featured h2 { font-family: var(--serif); font-weight: 300; font-size: clamp(24px, 2.5vw, 36px); text-align: center; margin-bottom: 56px; }
+.listing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+.listing-card { border-bottom: 1px solid var(--brown); padding-bottom: 20px; }
+.listing-card-img { position: relative; overflow: hidden; margin-bottom: 16px; }
+.listing-card-img img { width: 100%; height: 280px; object-fit: cover; transition: transform .7s ease; }
+.listing-card:hover .listing-card-img img { transform: scale(1.04); }
+.listing-card h3 { font-family: var(--serif); font-size: 19px; color: var(--deep-grey); margin-bottom: 8px; line-height: 1.35; }
+.listing-card .excerpt { font-family: var(--sans); font-size: 12px; color: var(--grey-med); line-height: 1.6; margin-bottom: 8px; }
+.listing-card .location { font-family: var(--sans); font-size: 11px; color: var(--brown); font-weight: 600; letter-spacing: .04em; }
+
+/* ── SERVICES ── */
+.services { padding: 100px 0; }
+.services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.services h3 { font-family: var(--serif); font-size: 22px; color: var(--brown); margin-bottom: 8px; }
+.services h2 { font-family: var(--serif); font-size: clamp(24px, 2.5vw, 36px); margin-bottom: 24px; line-height: 1.2; }
+.services .desc { font-family: var(--sans); font-size: 14px; font-weight: 300; line-height: 1.8; color: var(--grey-med); margin-bottom: 32px; }
+.services-img { width: 100%; height: 400px; object-fit: cover; }
+
+/* ── NEWS / GUIDE ── */
+.news { padding: 100px 0 80px; }
+.news h2 { font-family: var(--serif); font-weight: 300; font-size: clamp(24px, 2.5vw, 36px); text-align: center; margin-bottom: 56px; }
+.news-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+.news-card { border-bottom: 1px solid var(--brown); padding-bottom: 20px; }
+.news-card img { width: 100%; height: 240px; object-fit: cover; margin-bottom: 20px; }
+.news-card h3 { font-family: var(--serif); font-size: 18px; color: var(--deep-grey); margin-bottom: 8px; line-height: 1.35; }
+.news-card p { font-family: var(--sans); font-size: 12px; color: var(--grey-med); line-height: 1.6; }
+
+/* ── NEWSLETTER ── */
+.newsletter { padding: 60px 0; }
+.newsletter-inner { max-width: 720px; margin: 0 auto; background: var(--brown-light); padding: 56px 48px; }
+.newsletter h2 { font-family: var(--serif); font-size: 26px; margin-bottom: 24px; }
+.newsletter-form { display: flex; gap: 12px; }
+.newsletter-form input { flex: 1; font-family: var(--sans); font-size: 14px; padding: 14px 16px; border: 1px solid var(--light-grey); background: var(--white); outline: none; }
+.newsletter-form input:focus { border-color: var(--brown); }
+.newsletter-form button { font-family: var(--sans); font-size: 13px; padding: 14px 28px; background: var(--brown); color: var(--white); border: none; cursor: pointer; letter-spacing: .04em; transition: background .3s; }
+.newsletter-form button:hover { background: #a07d48; }
+
+/* ── LINKS SECTION (dark) ── */
+.links-section { background: var(--true-black); padding: 80px 0; }
+.links-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; }
+.links-col h4 { font-family: var(--sans); font-size: 11px; color: var(--brown); letter-spacing: .06em; margin-bottom: 20px; }
+.links-col a { display: block; font-family: var(--sans); font-size: 14px; color: var(--white); font-weight: 300; padding-bottom: 16px; margin-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,.08); transition: color .3s; }
+.links-col a:hover { color: var(--brown); }
+
+/* ── FOOTER ── */
+.site-footer { padding: 64px 0; border-top: 1px solid var(--light-grey); }
+.footer-top { display: grid; grid-template-columns: 1fr 2fr; gap: 80px; margin-bottom: 48px; }
+.footer-logo { font-family: var(--serif); font-size: 12px; letter-spacing: .25em; text-transform: uppercase; color: var(--black); line-height: 1.4; }
+.footer-logo .pipe { color: var(--brown); display: block; font-size: 10px; letter-spacing: .3em; }
+.footer-cols { display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; }
+.footer-cols h4 { font-family: var(--serif); font-size: 16px; font-weight: 500; margin-bottom: 16px; }
+.footer-cols a { display: block; font-family: var(--sans); font-size: 12px; color: var(--grey); margin-bottom: 10px; transition: color .3s; }
+.footer-cols a:hover { color: var(--brown); }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 32px; border-top: 1px solid var(--light-grey); }
+.footer-bottom p { font-family: var(--sans); font-size: 12px; color: var(--grey); }
+.footer-social { display: flex; gap: 20px; }
+.footer-social a { font-family: var(--sans); font-size: 12px; color: var(--grey); transition: color .3s; }
+.footer-social a:hover { color: var(--brown); }
+.footer-legal a { font-family: var(--sans); font-size: 12px; color: var(--grey); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .header-nav, .header-right { display: none; }
+  .header-inner { grid-template-columns: 1fr; justify-items: center; }
+  .intro-grid, .prop-grid, .listing-grid, .news-grid, .services-grid, .links-grid, .footer-cols { grid-template-columns: 1fr; gap: 32px; }
+  .footer-top { grid-template-columns: 1fr; gap: 40px; }
+  .prop-big img, .prop-card img { height: 280px; }
+  .dev-card { min-width: 300px; }
+  .hero-links a { padding: 0 16px; font-size: 11px; }
+  .newsletter-form { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header class="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <nav class="header-nav">
+        <a href="#properties">Buy</a>
+        <a href="#developments">Developments</a>
+        <a href="#services">Our Offer</a>
+        <a href="#news">Press</a>
+      </nav>
+      <div class="header-logo">
+        <a href="#">
+          South Africa<span class="pipe">Forbes Global Properties</span>
+        </a>
+      </div>
+      <div class="header-right">
+        <a href="#contact">Contact Us</a>
+        <a href="#">Private Office</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-media">
+    <img src="https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=1920&q=80" alt="Cape Town luxury property">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-breadcrumb rv">
+      <span>Real estate</span>
+      <span class="dot"></span>
+      <span>South Africa</span>
+    </div>
+    <h1 class="hero-title rv d1">The world of <span class="accent">exceptional property</span></h1>
+    <p class="hero-sub rv d2">South Africa | Forbes Global Properties is your luxury real estate partner for the Cape, the Winelands, Safari Country and beyond.</p>
+    <div class="hero-links rv d3">
+      <a href="#properties">Buy</a>
+      <a href="#services">Sell</a>
+      <a href="#contact">Estimate</a>
+    </div>
+    <div class="hero-scroll"></div>
+    <p class="hero-enter rv d4">Enter</p>
+  </div>
+</section>
+
+<!-- ═══ INTRO ═══ -->
+<section class="intro" id="about">
+  <div class="container">
+    <div class="intro-grid">
+      <div>
+        <h2 class="rv">South Africa | Forbes Global Properties: the <span class="accent">reference</span> in luxury and prestige real estate</h2>
+        <div class="intro-text rv d1">
+          As the exclusive South African member of the Forbes Global Properties network, we offer discerning buyers and sellers access to the world's most powerful real estate marketing platform. Backed by 167 million monthly readers, 80% global share of voice in luxury real estate, and an in-house cinematic production team, we connect South Africa's most extraordinary homes with the world's most qualified buyers.
+        </div>
+        <a href="#services" class="btn-outline rv d2">More information</a>
+      </div>
+      <div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROPERTIES ═══ -->
+<section class="properties" id="properties">
+  <div class="container">
+    <h2 class="rv">Discover our extraordinary properties</h2>
+
+    <div class="prop-big rv d1">
+      <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1400&q=80" alt="Luxury villa">
+      <div class="prop-big-overlay"></div>
+      <div class="prop-big-content">
+        <h3>Explore our selection of homes and villas</h3>
+        <p>Contemporary masterworks and heritage estates across the Atlantic Seaboard, Constantia and Bishopscourt.</p>
+      </div>
+    </div>
+    <p class="prop-label rv d2">Homes &amp; Villas</p>
+
+    <div class="prop-grid">
+      <div class="prop-card rv d1">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="Wine estate">
+        <div class="prop-card-overlay"></div>
+        <div class="prop-card-content">
+          <h3>Explore our wine estates</h3>
+          <p>Heritage vineyards and contemporary cellars across Stellenbosch, Franschhoek and Paarl.</p>
+        </div>
+      </div>
+      <div class="prop-card rv d2">
+        <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800&q=80" alt="Safari estate">
+        <div class="prop-card-overlay"></div>
+        <div class="prop-card-content">
+          <h3>Explore our safari estates</h3>
+          <p>Private game reserves and bush lodges in KwaZulu-Natal, Limpopo and the Eastern Cape.</p>
+        </div>
+      </div>
+    </div>
+    <a href="#" class="btn-outline rv">Our luxury properties for sale</a>
+  </div>
+</section>
+
+<!-- ═══ DEVELOPMENTS ═══ -->
+<section class="developments" id="developments">
+  <div class="container">
+    <h2 class="rv">Our exceptional new developments</h2>
+    <p class="subtitle rv d1">Discover South Africa's most anticipated luxury developments, where extraordinary design, conservation, and the art of living converge.</p>
+  </div>
+  <div class="container">
+    <div class="dev-scroll">
+      <div class="dev-card">
+        <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=600&q=80" alt="Thanda">
+        <div class="dev-card-overlay"></div>
+        <div class="dev-card-content">
+          <h3>The Royal Thanda Club</h3>
+          <div class="loc">KwaZulu-Natal</div>
+          <p>44 luxury safari residences within a 16,500 hectare Big Five private game reserve. From $5M USD. By special invitation only.</p>
+        </div>
+      </div>
+      <div class="dev-card">
+        <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80" alt="Val de Vie">
+        <div class="dev-card-overlay"></div>
+        <div class="dev-card-content">
+          <h3>Val de Vie Estate</h3>
+          <div class="loc">Paarl, Western Cape</div>
+          <p>South Africa's premier lifestyle estate. Award-winning polo, golf, and equestrian facilities surrounded by the Drakenstein Mountains.</p>
+        </div>
+      </div>
+      <div class="dev-card">
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80" alt="Atlantic Seaboard">
+        <div class="dev-card-overlay"></div>
+        <div class="dev-card-content">
+          <h3>Clifton Residences</h3>
+          <div class="loc">Atlantic Seaboard, Cape Town</div>
+          <p>Ultra-luxury contemporary residences perched above Clifton's legendary beaches with panoramic Atlantic views.</p>
+        </div>
+      </div>
+      <div class="dev-card">
+        <img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=600&q=80" alt="Franschhoek">
+        <div class="dev-card-overlay"></div>
+        <div class="dev-card-content">
+          <h3>Franschhoek Wine Estate</h3>
+          <div class="loc">Franschhoek, Western Cape</div>
+          <p>A collection of contemporary villas set among working vineyards in the heart of South Africa's culinary capital.</p>
+        </div>
+      </div>
+      <div class="dev-card">
+        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600&q=80" alt="Garden Route">
+        <div class="dev-card-overlay"></div>
+        <div class="dev-card-content">
+          <h3>Pezula Private Estate</h3>
+          <div class="loc">Knysna, Garden Route</div>
+          <p>Clifftop luxury on the Garden Route with championship golf and indigenous forest as your neighbours.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FEATURED LISTINGS ═══ -->
+<section class="featured">
+  <div class="container">
+    <h2 class="rv">More than just exceptional locations&hellip;</h2>
+    <div class="listing-grid">
+      <div class="listing-card rv d1">
+        <div class="listing-card-img">
+          <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&q=80" alt="Property">
+        </div>
+        <h3>Contemporary Masterwork Above Clifton's Fourth Beach</h3>
+        <p class="excerpt">Perched on the granite slopes of Lion's Head, this six-bedroom residence reimagines indoor-outdoor living with floor-to-ceiling glass and an infinity pool that dissolves into the Atlantic horizon.</p>
+        <p class="location">Clifton, Atlantic Seaboard, Cape Town</p>
+      </div>
+      <div class="listing-card rv d2">
+        <div class="listing-card-img">
+          <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600&q=80" alt="Property">
+        </div>
+        <h3>Heritage Cape Dutch Estate in the Heart of Constantia</h3>
+        <p class="excerpt">A meticulously restored 18th-century Cape Dutch homestead set on three hectares of manicured gardens, with mountain views from every room and a private vineyard producing award-winning Sauvignon Blanc.</p>
+        <p class="location">Constantia, Southern Suburbs, Cape Town</p>
+      </div>
+      <div class="listing-card rv d3">
+        <div class="listing-card-img">
+          <img src="https://images.unsplash.com/photo-1518098268026-4e89f1a2cd8e?w=600&q=80" alt="Property">
+        </div>
+        <h3>An Iconic Private Safari Lodge Overlooking the Waterberg</h3>
+        <p class="excerpt">Set within a 5,000-hectare private concession, this six-suite lodge offers complete privacy, Big Five game viewing from your bedroom terrace, and staff that anticipate every need before it arises.</p>
+        <p class="location">Waterberg, Limpopo</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SERVICES ═══ -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="services-grid">
+      <div>
+        <h3 class="text-brown rv">Personalised advice and local expertise</h3>
+        <h2 class="rv d1">Our tailor-made services for buying and selling</h2>
+        <p class="desc rv d2">We guarantee unparalleled support, whatever the location of the property, thanks to the expertise of our team and our strategic global partnerships. Our services are personalised and tailored to every stage of a property project: valuation, sale, acquisition, or investment. Each client has a dedicated contact, within a respectful framework of trust and absolute discretion.</p>
+        <a href="#contact" class="btn-outline rv d3">Entrust us with your property</a>
+      </div>
+      <div class="rv d2">
+        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&q=80" alt="Services" class="services-img">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ NEWS ═══ -->
+<section class="news" id="news">
+  <div class="container">
+    <h2 class="rv">Discover our latest news and property guide</h2>
+    <div class="news-grid">
+      <div class="news-card rv d1">
+        <img src="https://images.unsplash.com/photo-1577083552431-6e5fd01988ec?w=600&q=80" alt="News">
+        <h3>Buying Property in South Africa as a Foreigner</h3>
+        <p>International buyers may find it helpful to understand the regulatory landscape when purchasing luxury real estate in South Africa. Here is what you need to know.</p>
+      </div>
+      <div class="news-card rv d2">
+        <img src="https://images.unsplash.com/photo-1504279577054-acfeccf8fc52?w=600&q=80" alt="News">
+        <h3>The South Africa Exchange Rate Opportunity</h3>
+        <p>At R18-19 per USD, South African luxury property offers extraordinary value for international buyers. What does $3M buy you in Cape Town vs Cannes vs Malibu?</p>
+      </div>
+      <div class="news-card rv d3">
+        <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=600&q=80" alt="News">
+        <h3>Safari to Sea: Why South Africa Is the World's Most Complete Luxury Destination</h3>
+        <p>No other country on earth offers Big Five safari, world-class wine country, and pristine beaches within a two-hour flight. Here is why the world is taking notice.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ NEWSLETTER ═══ -->
+<section class="newsletter" id="contact">
+  <div class="container">
+    <div class="newsletter-inner rv">
+      <h2>Subscribe to receive information about our latest properties.</h2>
+      <div class="newsletter-form">
+        <input type="email" placeholder="Your email address">
+        <button type="submit">Subscribe</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ LINKS SECTION ═══ -->
+<section class="links-section">
+  <div class="container">
+    <div class="links-grid">
+      <div class="links-col">
+        <h4>Properties in Cape Town</h4>
+        <a href="#">Luxury property in Cape Town</a>
+        <a href="#">Atlantic Seaboard villas for sale</a>
+        <a href="#">Constantia estates for sale</a>
+      </div>
+      <div class="links-col">
+        <h4>Properties in the Winelands</h4>
+        <a href="#">Wine estates for sale</a>
+        <a href="#">Luxury homes in Stellenbosch</a>
+        <a href="#">Franschhoek property for sale</a>
+      </div>
+      <div class="links-col">
+        <h4>Safari &amp; Bush Estates</h4>
+        <a href="#">Private game reserves for sale</a>
+        <a href="#">Safari lodges in KwaZulu-Natal</a>
+        <a href="#">Bush estates in Limpopo</a>
+      </div>
+      <div class="links-col">
+        <h4>Destinations to discover</h4>
+        <a href="#">Cape Town</a>
+        <a href="#">Stellenbosch &amp; Franschhoek</a>
+        <a href="#">Garden Route</a>
+        <a href="#">KwaZulu-Natal</a>
+        <a href="#">Johannesburg &amp; Gauteng</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">
+          South Africa<span class="pipe">Forbes Global Properties</span>
+        </div>
+      </div>
+      <div class="footer-cols">
+        <div>
+          <h4>Buy</h4>
+          <a href="#">Homes &amp; Villas</a>
+          <a href="#">Wine Estates</a>
+          <a href="#">Safari Lodges</a>
+          <a href="#">Apartments</a>
+          <a href="#">Land</a>
+        </div>
+        <div>
+          <h4>Destinations</h4>
+          <a href="#">Cape Town</a>
+          <a href="#">Stellenbosch</a>
+          <a href="#">Franschhoek</a>
+          <a href="#">Garden Route</a>
+          <a href="#">KwaZulu-Natal</a>
+        </div>
+        <div>
+          <h4>About Us</h4>
+          <a href="#">Forbes Global Properties</a>
+          <a href="#">Our Team</a>
+          <a href="#">Voyager Visual</a>
+        </div>
+        <div>
+          <h4>Our Offer</h4>
+          <a href="#">Estimate your property</a>
+          <a href="#">Selling your property</a>
+          <a href="#">International buyers guide</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <a href="mailto:keegan@southafricafgp.com">keegan@southafricafgp.com</a>
+          <a href="tel:+27828200414">+27 82 820 0414</a>
+          <a href="#">Cape Town, South Africa</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 South Africa | Forbes Global Properties</p>
+      <div class="footer-social">
+        <a href="#">Instagram</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">YouTube</a>
+      </div>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
+}, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+document.querySelectorAll('.rv').forEach(el => observer.observe(el));
+
+// Header scroll state
+const header = document.querySelector('.site-header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 80);
+});
+
+// Auto-reveal hero elements on load
+setTimeout(() => {
+  document.querySelectorAll('.hero .rv').forEach(el => el.classList.add('vis'));
+}, 300);
+</script>
+</body>
+</html>
